@@ -39,5 +39,6 @@ Meteor.startup(() => {
   // If the Tasks collection is empty, add some data.
   if (TasksCollection.find().count() === 0) {
     insertTask('500', 'Bryan', 'wash car', 'Not Started', 'customer needs ride', 'bpartipilo', 'button' );
+    insertTask('4:00', 'Austin', 'take car to detail', 'Not Started', 'Picking up at 5pm', 'bpartipilo', 'button' );
   }
 });
