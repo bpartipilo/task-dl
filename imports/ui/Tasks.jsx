@@ -10,7 +10,7 @@ class Tasks extends Component {
 
     renderTasks() {
         return this.props.tasks.map((task) => (
-            <Task key={task._id} task={task} time={task.time} data={task}/>
+            <Task key={task._id} task={task} />
         ));
     }
 
@@ -28,7 +28,6 @@ class Tasks extends Component {
                             <th>Notes</th>
                             <th>Username</th>
                             <th>Update</th>
-
                         </tr>
                         </thead>
                     <tbody>

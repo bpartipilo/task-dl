@@ -5,8 +5,8 @@ class Task extends Component {
     render() {
         return (
             <tr>
-            <td>{this.props.time}</td>
-            <td>{this.props.data.asm}</td>
+            <td>{this.props.task.time}</td>
+            <td>{this.props.task.asm}</td>
             <td>{this.props.task.task}</td>
             <td>{this.props.task.porter}</td>
             <td>{this.props.task.status}</td>

@@ -7,7 +7,7 @@ const App = () => (
   <div>
     <h1>This is the tasks page</h1>
     <Tasks />
-    <Task />
+    
   </div>
 );
 
