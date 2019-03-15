@@ -1,25 +1,24 @@
 import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
+import { tasks } from '/imports/api/tasks.js';
+import Task from './Task.jsx';
+
 
 data = [{ _id: 1, name: 'Austin', task: 'Get shit done '}, { _id: 2, name: 'Bryan', task: 'Done with shit' }, { name: "other", task: "this" }]
 
 class Tasks extends Component {
 
-    renderData() {
-        return Data.map((task) => (
-            <div>
-                <td>{task.name}</td>
-                <td>{task.task}</td>
-            </div>
+    renderTasks() {
+        return this.props.tasks.map((task) => (
+            <Tasks key={tasks._id} task={tasks} />
         ));
-
     }
 
     render() {
         return (
             <div>
-                <div class='col-md-12'>
                     <table className="table table-bordered">
+                    <thead>
                         <tr>
                             <th>Time</th>
                             <th>ASM</th>
@@ -31,24 +30,17 @@ class Tasks extends Component {
                             <th>Update</th>
 
                         </tr>
-                        <tr>
-                            <td>Bryan</td>
-                            <td>Meet with Austin</td>
-                        </tr>
-                    </table>
-                </div>
+                        </thead>
+                    <tbody>
+                        {this.renderTasks()}
+                    </tbody>
+                </table>
             </div>
-
-
         );
-
-
-
     }
-
-
 }
-
-export default Tasks = withTracker(() => {
-    return {};
+export default withTracker(() => {
+    return {
+        tasks: Tasks.find({}).fetch(),
+    };
 })(Tasks);
