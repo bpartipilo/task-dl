@@ -1,10 +1,15 @@
 import React from 'react';
 import Tasks from './Tasks.jsx';
 import Task from './Task.jsx';
+import Dialog from './Modal'
+
 
 
 
 class App extends React.Component {
+  State = {
+    isOpen: false
+  }
    constructor(props) {
       super(props);
       
@@ -20,10 +25,18 @@ class App extends React.Component {
       return (
         <div>
         <h1>This is the tasks page</h1>
-        <button onClick = {this.updateState}>NEW</button>
+        <div className="App">
+        <button onClick={(e) => this.setState({ isOpen: true })}>New Task</button>
+
+        <Dialog isOpen={this.state.isOpen} onClose={(e) => this.setState({ isOpen: false })}>
+        This is where you add tasks
+        </Dialog>
         <Tasks />
+
+        </div>
     
-      </div>
+        </div>
+    
       );
    }
 }

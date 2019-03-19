@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
+import Dialog from './Modal'
+
 
 class Task extends Component {
     constructor(props) {
