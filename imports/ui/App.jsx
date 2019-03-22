@@ -1,7 +1,7 @@
 import React from 'react';
 import Tasks from './Tasks.jsx';
 import Task from './Task.jsx';
-import Dialog from './Modal'
+import Dialog from './Modal';
 
 
 

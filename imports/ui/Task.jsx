@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
-import Dialog from './Modal'
+import Dialog from './Modal';
+import updateDialog from './UpdateModal';
 
 
 class Task extends Component {
@@ -12,6 +13,7 @@ class Task extends Component {
      };
      updateState() {
         console.log ("hello")
+        this.props.callbackFromParent(this.props.task);
      }
     render() {
         return (
